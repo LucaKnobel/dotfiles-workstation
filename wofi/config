@@ -1,0 +1,10 @@
+show=drun
+insensitive=true
+width=800  
+height=700         
+location=center   
+anchor=center
+x-offset=0
+y-offset=0
+sort_order=alphabetical
+no_actions=true

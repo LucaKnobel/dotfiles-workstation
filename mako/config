@@ -1,0 +1,10 @@
+anchor=top-right
+font=Inter 12
+margin=10
+padding=10
+background-color=#1e1e2e
+text-color=#e6e7ea
+border-size=2
+border-color=#3b3b3b
+default-timeout=3000   
+max-visible=3
