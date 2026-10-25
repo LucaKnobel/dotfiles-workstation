@@ -1,0 +1,155 @@
+
+/* ============================================================
+   NIRI WAYBAR - GNOME MINIMAL
+   ============================================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* ------------------------------------------------------------
+   MAIN BAR
+   ------------------------------------------------------------ */
+
+window#waybar {
+    background: #242424;
+    color: #eeeeee;
+    border-radius: 0;
+}
+
+/* ------------------------------------------------------------
+   WORKSPACES
+   ------------------------------------------------------------ */
+
+#workspaces {
+    margin: 0 8px 0 12px;
+    padding: 0;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #666666;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    min-width: 14px;
+    min-height: 26px;
+    padding: 0 3px;
+    margin: 3px 1px;
+
+    border-radius: 6px;
+}
+
+#workspaces button.empty {
+    color: #484848;
+}
+
+#workspaces button.active {
+    color: #dedede;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+    background: #3c3c3c;
+}
+
+#workspaces button:hover {
+    background: #363636;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ef7777;
+}
+
+/* ------------------------------------------------------------
+   ACTIVE WINDOW
+   ------------------------------------------------------------ */
+
+#window {
+    color: #c8c8c8;
+    font-weight: 500;
+
+    padding: 0 12px 0 6px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+/* ------------------------------------------------------------
+   CENTER CLOCK
+   ------------------------------------------------------------ */
+
+#clock {
+    color: #eeeeee;
+    font-weight: 600;
+
+    padding: 0 12px;
+    margin: 2px 0;
+
+    border-radius: 6px;
+}
+
+#clock:hover {
+    background: #363636;
+}
+
+/* ------------------------------------------------------------
+   SYSTEM STATUS
+   ------------------------------------------------------------ */
+
+#network,
+#pulseaudio,
+#custom-notifications {
+    color: #e3e3e3;
+
+    font-size: 14px;
+    min-width: 18px;
+
+    padding: 0 9px;
+    margin: 2px 0;
+
+    border-radius: 6px;
+}
+
+#network:hover,
+#pulseaudio:hover,
+#custom-notifications:hover {
+    background: #363636;
+}
+
+#network.disconnected {
+    color: #999999;
+}
+
+#pulseaudio.muted {
+    color: #999999;
+}
+
+#custom-notifications {
+    margin-right: 12px;
+}
+
+/* ------------------------------------------------------------
+   TOOLTIP
+   ------------------------------------------------------------ */
+
+tooltip {
+    background: #303030;
+    color: #eeeeee;
+    border: 1px solid #454545;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #eeeeee;
+    padding: 4px;
+}
