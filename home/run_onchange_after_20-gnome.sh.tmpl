@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Chezmoi sourceDir points to repository/home.
+# GNOME configurations are stored one directory above.
+#
+# Re-run when either configuration file changes.
+# settings-sha256: {{ output "sha256sum" (joinPath .chezmoi.sourceDir ".." "gnome" "settings.ini") | trim }}
+# layout-sha256: {{ output "sha256sum" (joinPath .chezmoi.sourceDir ".." "gnome" "app-layout.ini") | trim }}
+
+REPO_ROOT={{ joinPath .chezmoi.sourceDir ".." | quote }}
+
+SETTINGS="$REPO_ROOT/gnome/settings.ini"
+APP_LAYOUT="$REPO_ROOT/gnome/app-layout.ini"
+
+if ! command -v dconf >/dev/null 2>&1; then
+    echo "ERROR: dconf is not installed." >&2
+    exit 1
+fi
+
+if [[ "${XDG_CURRENT_DESKTOP:-}" != *GNOME* ]]; then
+    echo "ERROR: Run chezmoi apply inside a GNOME session." >&2
+    exit 1
+fi
+
+if [[ ! -f "$SETTINGS" || ! -f "$APP_LAYOUT" ]]; then
+    echo "ERROR: GNOME configuration files are missing." >&2
+    exit 1
+fi
+
+echo "Applying GNOME desktop settings..."
+dconf load /org/gnome/ < "$SETTINGS"
+
+echo "Applying GNOME application layout..."
+dconf load /org/gnome/ < "$APP_LAYOUT"
+
+echo "GNOME configuration applied successfully."
