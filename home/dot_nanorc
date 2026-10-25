@@ -1,0 +1,129 @@
+## ============================================================
+## GNU Nano Configuration
+## Theme: GitHub Dark High Contrast (Ghostty)
+## System: Arch Linux
+## ============================================================
+
+
+## ------------------------------------------------------------
+## 1. Syntax Highlighting
+## ------------------------------------------------------------
+
+## Load all syntax definitions provided by Arch Linux
+include "/usr/share/nano/*.nanorc"
+
+
+## ------------------------------------------------------------
+## 2. Editor Behaviour
+## ------------------------------------------------------------
+
+## Display line numbers
+set linenumbers
+
+## Highlight the current line
+
+## Automatically indent new lines
+set autoindent
+
+## Use four spaces for indentation
+set tabsize 4
+set tabstospaces
+
+## Enable mouse support
+set mouse
+
+## Enable smooth scrolling
+
+## Display a scrollbar
+set indicator
+
+## Preserve line breaks when editing
+set softwrap
+
+## Show whitespace characters when requested
+## Toggle with Alt+P
+# set whitespace "»·"
+
+## Enable multiple file buffers
+set multibuffer
+
+## Save search history between sessions
+set historylog
+
+## Remember cursor position
+set positionlog
+
+## Enable automatic bracket matching
+set matchbrackets "(<[{)>]}"
+
+## Display the cursor position in the minibar
+
+
+## ------------------------------------------------------------
+## 3. Modern User Interface
+## ------------------------------------------------------------
+
+## Compact status bar
+set minibar
+
+## Show useful editing shortcuts
+set quickblank
+
+## Disable the traditional help lines
+set nohelp
+
+
+## ------------------------------------------------------------
+## 4. GitHub Dark High Contrast Colors
+## ------------------------------------------------------------
+
+## Ghostty background: #0a0c10
+## Ghostty foreground: #f0f3f6
+##
+## Colors are inherited from the Ghostty ANSI palette.
+
+## Title bar
+set titlecolor bold,white,blue
+
+## Prompt messages
+set promptcolor cyan
+
+## Status messages
+set statuscolor bold,white,blue
+
+## Error messages
+set errorcolor bold,white,red
+
+## Shortcut keys
+set keycolor brightcyan
+
+## Shortcut descriptions
+set functioncolor brightgreen
+
+## Line numbers
+set numbercolor brightblack
+
+## Scroll indicator
+set scrollercolor brightblack
+
+## Selected text
+set selectedcolor black,brightblue
+
+## Current line
+set spotlightcolor black,brightblack
+
+
+## ------------------------------------------------------------
+## 5. Search
+## ------------------------------------------------------------
+
+## Case-insensitive search by default
+unset casesensitive
+
+## Smart home key behaviour
+set smarthome
+
+
+## ============================================================
+## End of configuration
+## ============================================================

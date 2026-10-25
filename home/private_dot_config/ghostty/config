@@ -1,0 +1,14 @@
+# Theme
+theme = GitHub Dark High Contrast
+
+# Schrift
+font-family = JetBrains Mono
+font-size = 12.5
+
+# Tabs
+gtk-tabs-location = top
+gtk-wide-tabs = true
+
+# Fenster
+window-padding-x = 10
+window-padding-y = 10
