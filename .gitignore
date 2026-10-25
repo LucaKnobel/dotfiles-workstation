@@ -1,0 +1,36 @@
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+
+# Python / virtual environments
+__pycache__/
+.venv/
+venv/
+
+# IDE local state
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Local machine data
+.local/
+.cache/
