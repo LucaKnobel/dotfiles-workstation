@@ -1,34 +1,95 @@
-# Starship — GitHub Dark High Contrast
-# Fokus: maximale Lesbarkeit und harmonische Farben
 
+# ============================================================
+# Starship Prompt Configuration
+# Debian 13 / Kitty / Bash
+# Theme: GitHub Dark High Contrast
+# Focus: readability, minimalism, and clarity
+# ============================================================
+
+
+# ------------------------------------------------------------
+# General
+# ------------------------------------------------------------
+
+# Do not add an empty line between prompts.
 add_newline = false
 
+# Limit the execution time of external commands.
+command_timeout = 500
+
+# Display the directory and Git information on the first line.
+# Keep the command input on a separate line.
 format = """
 $directory$git_branch$git_status
 $character"""
 
+
+# ------------------------------------------------------------
+# Directory
+# ------------------------------------------------------------
+
 [directory]
+
+# Use a clear blue for the current directory.
 style = "bold #71b7ff"
 format = "[$path]($style) "
+
+# Limit long directory paths to three components.
 truncation_length = 3
+
+# Show the path relative to the Git repository root.
 truncate_to_repo = true
 
+# Indicate omitted parent directories.
+truncation_symbol = "…/"
+
+# Use a tilde for the home directory.
+home_symbol = "~"
+
+
+# ------------------------------------------------------------
+# Git Branch
+# ------------------------------------------------------------
+
 [git_branch]
+
+# Display the branch name without additional symbols.
 style = "bold #f0f3f6"
 format = "[$branch]($style) "
 
+
+# ------------------------------------------------------------
+# Git Status
+# ------------------------------------------------------------
+
 [git_status]
-style = "bold #ffb757"
+
+# Display Git states only when relevant.
+style = "#ffb757"
 format = '([$all_status$ahead_behind]($style) )'
-modified = "●"
-staged = "+"
-untracked = "?"
-deleted = "✘"
-renamed = "»"
-conflicted = "="
-ahead = "⇡"
-behind = "⇣"
+
+# Working tree changes.
+modified = "modified "
+staged = "staged "
+untracked = "untracked "
+deleted = "deleted "
+renamed = "renamed "
+conflicted = "conflict "
+
+# Remote tracking status.
+ahead = "ahead ${count} "
+behind = "behind ${count} "
+diverged = "diverged "
+
+
+# ------------------------------------------------------------
+# Prompt Character
+# ------------------------------------------------------------
 
 [character]
+
+# Green indicates a successful command.
 success_symbol = "[❯](bold #4ae168)"
+
+# Red indicates a failed command.
 error_symbol = "[❯](bold #ff6a69)"
