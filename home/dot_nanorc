@@ -1,129 +1,115 @@
+
 ## ============================================================
 ## GNU Nano Configuration
-## Theme: GitHub Dark High Contrast (Ghostty)
-## System: Arch Linux
+## Debian 13 / Kitty / GitHub Dark High Contrast
+## Minimal interface with subtle colors and clear typography
 ## ============================================================
 
 
 ## ------------------------------------------------------------
-## 1. Syntax Highlighting
+## Editor Behavior
 ## ------------------------------------------------------------
 
-## Load all syntax definitions provided by Arch Linux
-include "/usr/share/nano/*.nanorc"
-
-
-## ------------------------------------------------------------
-## 2. Editor Behaviour
-## ------------------------------------------------------------
-
-## Display line numbers
+# Display line numbers in the left margin.
 set linenumbers
 
-## Highlight the current line
-
-## Automatically indent new lines
+# Automatically indent new lines.
 set autoindent
 
-## Use four spaces for indentation
+# Use four spaces for indentation.
 set tabsize 4
 set tabstospaces
 
-## Enable mouse support
+# Enable mouse support.
 set mouse
 
-## Enable smooth scrolling
-
-## Display a scrollbar
+# Show a subtle scroll indicator.
 set indicator
 
-## Preserve line breaks when editing
+# Visually wrap long lines without modifying their content.
 set softwrap
 
-## Show whitespace characters when requested
-## Toggle with Alt+P
-# set whitespace "»·"
-
-## Enable multiple file buffers
+# Allow multiple open file buffers.
 set multibuffer
 
-## Save search history between sessions
+# Remember search history and cursor positions.
 set historylog
-
-## Remember cursor position
 set positionlog
 
-## Enable automatic bracket matching
+# Enable bracket matching.
 set matchbrackets "(<[{)>]}"
 
-## Display the cursor position in the minibar
-
-
-## ------------------------------------------------------------
-## 3. Modern User Interface
-## ------------------------------------------------------------
-
-## Compact status bar
-set minibar
-
-## Show useful editing shortcuts
-set quickblank
-
-## Disable the traditional help lines
-set nohelp
-
-
-## ------------------------------------------------------------
-## 4. GitHub Dark High Contrast Colors
-## ------------------------------------------------------------
-
-## Ghostty background: #0a0c10
-## Ghostty foreground: #f0f3f6
-##
-## Colors are inherited from the Ghostty ANSI palette.
-
-## Title bar
-set titlecolor bold,white,blue
-
-## Prompt messages
-set promptcolor cyan
-
-## Status messages
-set statuscolor bold,white,blue
-
-## Error messages
-set errorcolor bold,white,red
-
-## Shortcut keys
-set keycolor brightcyan
-
-## Shortcut descriptions
-set functioncolor brightgreen
-
-## Line numbers
-set numbercolor brightblack
-
-## Scroll indicator
-set scrollercolor brightblack
-
-## Selected text
-set selectedcolor black,brightblue
-
-## Current line
-set spotlightcolor black,brightblack
-
-
-## ------------------------------------------------------------
-## 5. Search
-## ------------------------------------------------------------
-
-## Case-insensitive search by default
-unset casesensitive
-
-## Smart home key behaviour
+# Use smart Home key behavior.
 set smarthome
 
 
-## ============================================================
-## End of configuration
-## ============================================================
+## ------------------------------------------------------------
+## Minimal User Interface
+## ------------------------------------------------------------
+
+# Use a compact status bar instead of a full title bar.
+set minibar
+
+# Show keyboard shortcut hints at the bottom.
+unset nohelp
+
+# Clear temporary messages quickly.
+set quickblank
+
+
+## ------------------------------------------------------------
+## Colors
+## ------------------------------------------------------------
+
+# Preserve Kitty's default background throughout the UI.
+# Nano supports three-digit hexadecimal color values only.
+
+# Subtle gray line numbers on the normal terminal background.
+set numbercolor #888,normal
+
+# Subtle scroll indicator.
+set scrollercolor #888,normal
+
+# Neutral minibar with no colored background.
+set minicolor #bbb,normal
+
+# Neutral title bar fallback.
+set titlecolor #bbb,normal
+
+# Readable prompts without background highlighting.
+set promptcolor #aaf,normal
+
+# Discreet status messages.
+set statuscolor #bbb,normal
+
+# Red error text without a solid red background.
+set errorcolor bold,#f88,normal
+
+# Keyboard shortcut colors.
+set keycolor #aaf,normal
+
+# Shortcut description colors.
+set functioncolor #9d9,normal
+
+# Selection remains clearly distinguishable.
+set selectedcolor #000,#8bf
+
+# Highlight search matches without harsh colors.
+set spotlightcolor #000,#dd9
+
+
+## ------------------------------------------------------------
+## Search
+## ------------------------------------------------------------
+
+# Search case-insensitively by default.
+unset casesensitive
+
+
+## ------------------------------------------------------------
+## Syntax Highlighting
+## ------------------------------------------------------------
+
+# System syntax definitions are already loaded via:
+# /etc/nanorc -> /usr/share/nano/*.nanorc
+# No additional include directive is necessary.
